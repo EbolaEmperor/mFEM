@@ -1,4 +1,4 @@
-function pde = PlateBendingData4(varargin)
+function pde = PlateBendingData6(varargin)
 
 % data for plate
 if nargin == 0

@@ -34,7 +34,7 @@ str = cell(1,2*n);
 for i = 1:n
     var = upper(inputname(i+1));
     if mycontains(var, 'L2') 
-        stri = '$||u-u_h||$';  
+        stri = '$||u-u_h||_{L^2}$';  
         r = showrate(h,varargin{i},lab1{1},lab2{1});
     end
     if mycontains(var, 'H1')
@@ -50,7 +50,7 @@ for i = 1:n
         r = showrate(h,varargin{i},lab1{4},lab2{4});        
     end
     str{2*i-1} = stri;
-    str{2*i} = ['O (h^{' num2str(r,2) '})'];
+    str{2*i} = ['$O(h^{' num2str(r,2) '})$'];
 end
 
 h_legend = legend(str,'location','best', "interpreter", "latex");
