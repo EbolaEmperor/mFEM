@@ -15,7 +15,9 @@ showmesh(node,elem);
 subplot(1,3,2);
 ue = u(node); ue = ue(:,1);
 showsolution(node,elem,ue(1:size(node,1)));
+shading interp
 
 %% Plot numerical solution
 subplot(1,3,3);
 showsolution(node,elem,uh(1:size(node,1),1));
+shading interp

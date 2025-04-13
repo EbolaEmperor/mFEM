@@ -31,7 +31,7 @@ N = size(node,1);
 k = (1:N-nx)';  cut = nx*(1:ny-1); k(cut) = [];
 
 if isempty(varargin)
-    elem = [k+1 k+1+nx k; k+nx k k+1+nx]; % triangle element
+    elem = [k+1 k+1+nx k; k+nx k k+1+nx] % triangle element
 else
     elem = [k k+1 k+1+nx k+nx];           % rectrangle element
 end

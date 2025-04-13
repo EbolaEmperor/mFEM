@@ -22,9 +22,9 @@ if nargin-1 > n
     for i = 1:n
         r = showrate(h,varargin{i},lab1{i},lab2{i});
         str{2*i-1} = varargin{n+i};
-        str{2*i} = ['O (h^{' num2str(r,2) '})'];
+        str{2*i} = ['$O(h^{' num2str(r,2) '})$'];
     end
-    h_legend = legend(str,'location','best');
+    h_legend = legend(str,'location','best',"interpreter", "latex");
     set(h_legend,'FontSize',10);
     return;
 end
@@ -34,24 +34,24 @@ str = cell(1,2*n);
 for i = 1:n
     var = upper(inputname(i+1));
     if mycontains(var, 'L2') 
-        stri = '||u-u_h||';  
+        stri = '$||u-u_h||$';  
         r = showrate(h,varargin{i},lab1{1},lab2{1});
     end
     if mycontains(var, 'H1')
-        stri = '|u-u_h|_1';  
+        stri = '$|u-u_h|_{H^1}$';  
         r = showrate(h,varargin{i},lab1{2},lab2{2});
     end
     if mycontains(var, 'H2')
-        stri = '|u-u_h|_2'; 
+        stri = '$|u-u_h|_{H^2}$'; 
         r = showrate(h,varargin{i},lab1{3},lab2{3});
     end
     if mycontains(var, 'I')
-        stri = '||u_I-u_h||_E'; 
+        stri = '$||u_I-u_h||_E$'; 
         r = showrate(h,varargin{i},lab1{4},lab2{4});        
     end
     str{2*i-1} = stri;
     str{2*i} = ['O (h^{' num2str(r,2) '})'];
 end
 
-h_legend = legend(str,'location','best');
+h_legend = legend(str,'location','best', "interpreter", "latex");
 set(h_legend,'FontSize',10);
